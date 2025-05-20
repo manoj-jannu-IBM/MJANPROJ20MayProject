@@ -20,6 +20,44 @@ packages:
   gitUsername: manoj-jannu-IBM
   gitBranch: main
 services:
+- serviceName: project.mjanproj20may.integrations:CStest
+  packages:
+  - name: MJANPROJ20MayProject
+    version: "1.0"
+  - name: SIQAJDBCAdapterTests
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 10.7.0.0.66
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+- serviceName: SIQACloudStreamsTests:connetorOperations
+  packages:
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 10.7.0.0.66
+- serviceName: SIQACloudStreamsTests:createAccountConnectorService
+  packages:
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 10.7.0.0.66
+- serviceName: SIQACloudStreamsTests:retrieveAccountConnectorService
+  packages:
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 10.7.0.0.66
+- serviceName: SIQACloudStreamsTests:deleteAccountConnectorService
+  packages:
+  - name: SIQACloudStreamsTests
+    version: "1.0"
+  - name: WmSalesforceProvider
+    version: 10.7.0.0.66
 - serviceName: project.mjanproj20may.integrations:DBTest
   packages:
   - name: MJANPROJ20MayProject
