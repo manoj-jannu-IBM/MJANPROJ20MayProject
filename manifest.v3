@@ -9,17 +9,18 @@
   <null name="replication_services"/>
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="SIQACloudStreamsTests">1.0</value>
+    <value name="SIQAJDBCAdapterTests">1.0</value>
   </record>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">3</value>
+  <value name="build">4</value>
   <null name="description"/>
   <value name="created_date">20-05-2025 05:45:52 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2025-05-20T06:04:20.268255601Z</value>
+  <value name="lastUpdated">2025-05-20T06:04:45.415342125Z</value>
   <value name="wmProjectId">fl564e5fbc716a0e2e224d1c</value>
   <value name="creator">Manoj Jannu</value>
 </Values>
