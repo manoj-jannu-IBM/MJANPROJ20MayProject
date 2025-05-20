@@ -11,17 +11,18 @@
     <value name="SIQACloudStreamsTests">1.0</value>
     <value name="SIQAJDBCAdapterTests">1.0</value>
     <value name="WmSalesforceRESTProvider">10.7.0.0.187</value>
+    <value name="DADA_GlobalVariable1">1.0</value>
   </record>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">17</value>
+  <value name="build">18</value>
   <null name="description"/>
   <value name="created_date">20-05-2025 05:45:52 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2025-05-20T08:10:08.9969012Z</value>
+  <value name="lastUpdated">2025-05-20T08:11:59.928995868Z</value>
   <value name="wmProjectId">fl564e5fbc716a0e2e224d1c</value>
   <value name="creator">Manoj Jannu</value>
 </Values>

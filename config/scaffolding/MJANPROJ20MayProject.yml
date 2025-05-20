@@ -23,6 +23,11 @@ packages:
   version: 10.7.0.0.187
   wpmServer: https://packages.webmethods.io
   wpmRegistry: supported
+- name: DADA_GlobalVariable1
+  gitServerName: MJAN_GitHub
+  gitUrl: https://github.com/manoj-jannu-IBM
+  gitUsername: manoj-jannu-IBM
+  gitBranch: main
 services:
 - serviceName: project.mjanproj20may.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:MJANSalesforceOauth
   packages:
@@ -145,6 +150,8 @@ configurationVariables:
   : "false"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth_v20.accessTokenRefreshURLRequest
   : URL Query String
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cx.grant_type
+  : refresh_token
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth_v20.refreshToken
   : "{AES}z0OyKRGMCuSrw5+VwAKX9/oM6BIKjPeYnDaBN96E5WE51ihADTbuVPxNgEzibj4QZ+EkdVmuzavsuGo7cSFFyYqssvQYfu051UABuvfGck7t1OSEZFCXaC8TXIG3+XjN"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.tcpNoDelay
@@ -153,16 +160,28 @@ configurationVariables:
   : https://login.salesforce.com/services/oauth2/token
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.startupBackoffSecs
   : "10"
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.connectTimeout
+  : "30000"
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.expireTimeout
+  : "1000"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.enableSNI
   : "true"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth_v20.scope
   : offline_access api refresh_token
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.sockBuffSize
+  : "8192"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.retryIfRequestSentOk
   : "true"
+  ? iscloudstreamsconnectorservice.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:CreateAccount.connectionAlias
+  : project.mjanproj20may.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:MJANSalesforceOauth
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.blockTimeout
   : "1000"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth.consumerSecret
   : "{AES}ePv9vDKXdd6A2HDsPDBAO8y1Fe9R7m6Dya5xSCLlAK353vKmgg/uiZT0YAoUU42Eojf9A5EvRE+pSL3aLrpBNWmK1wuN3U1rA1B0VhuZoUw="
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.startupRetryCount
+  : "0"
+  ? iscloudstreamsconnectorservice.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:CreateAccount.virtualServiceName
+  : WmCloudStreams.RestVS
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.reuseAddr
   : "false"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth_v20.authorizationServerUrl
@@ -179,42 +198,28 @@ configurationVariables:
   : "true"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.keepAliveInterval
   : "300000"
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth.consumerId
-  : 3MVG9k02hQhyUgQCKlnwOVc1lTfY9AqPHmUIRA6I.ZqYzln.F3Vuok.Rk6d6F00IhbOJxstGzhIJDyuJGd0ft
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.minimumPoolSize
-  : "1"
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.connectionEnabled
-  : "true"
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.poolIncrementSize
-  : "1"
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.validateAfterInactivity
-  : "1000"
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cx.grant_type
-  : refresh_token
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.connectTimeout
-  : "30000"
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.expireTimeout
-  : "1000"
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.sockBuffSize
-  : "8192"
-  ? iscloudstreamsconnectorservice.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:CreateAccount.connectionAlias
-  : project.mjanproj20may.WmSalesforceRESTProvider.com_softwareag_cloudstreams_salesforce_rest_v60.connections:MJANSalesforceOauth
-  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.startupRetryCount
-  : "0"
-  ? iscloudstreamsconnectorservice.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..operations..actions:CreateAccount.virtualServiceName
-  : WmCloudStreams.RestVS
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.poolable
   : "true"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.maximumPoolSize
   : "10"
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth.consumerId
+  : 3MVG9k02hQhyUgQCKlnwOVc1lTfY9AqPHmUIRA6I.ZqYzln.F3Vuok.Rk6d6F00IhbOJxstGzhIJDyuJGd0ft
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.retryCount
   : "4"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.enableCompression
   : "false"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.hostnameVerifier
   : org.apache.http.conn.ssl.DefaultHostnameVerifier
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.minimumPoolSize
+  : "1"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.socketLinger
   : "-1"
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.connectionEnabled
+  : "true"
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.poolIncrementSize
+  : "1"
+  ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.cn.validateAfterInactivity
+  : "1000"
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.oauth_v20.accessTokenRefreshURL
   : https://login.salesforce.com/services/oauth2/token
   ? cloudstreamsconnection.project..mjanproj20may..WmSalesforceRESTProvider..com_softwareag_cloudstreams_salesforce_rest_v60..connections:MJANSalesforceOauth.timeoutType
